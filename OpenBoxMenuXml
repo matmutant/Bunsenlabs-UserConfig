@@ -67,7 +67,7 @@
 			</item>
 			<item label="(Re)start Alsa">
 				<action name="Execute">
-					<command>terminator -e ~/scripts/RestartAlsa.sh</command>
+					<command>gksudo alsactl init</command>
 				</action>
 			</item>
 			<item label="(Re)start PowerTOP">
