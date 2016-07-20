@@ -1,0 +1,10 @@
+# /usr/lib/systemd/system/fstrim.service
+# Working path on Bunsenlabs:
+# /etc/systemd/fstrim.service
+
+[Unit]
+Description=Discard unused blocks
+
+[Service]
+Type=oneshot
+ExecStart=/home/matmutant/scripts/trim3.sh
