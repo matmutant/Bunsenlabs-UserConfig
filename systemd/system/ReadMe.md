@@ -3,5 +3,5 @@
 The trim3.sh file is meant to be in /home/[userName]/scripts/
 
 Enable the service with:
-sudo systemctl enable [serviceName].timer
+```sudo systemctl enable [serviceName].timer```
 
