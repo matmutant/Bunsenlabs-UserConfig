@@ -1,0 +1,17 @@
+# /usr/lib/systemd/system/fstrim.timer
+# Working path on Bunsenlabs:
+# /etc/systemd/fstrim.timer
+
+
+[Unit]
+Description=Discard unused blocks once a week
+Documentation=man:fstrim
+
+[Timer]
+#OnCalendar=daily
+OnBootSec=1min
+AccuracySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
