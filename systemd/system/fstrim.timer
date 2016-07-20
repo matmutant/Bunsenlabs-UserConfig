@@ -4,7 +4,7 @@
 
 
 [Unit]
-Description=Discard unused blocks once a week
+Description=Discard unused blocks at boot
 Documentation=man:fstrim
 
 [Timer]
