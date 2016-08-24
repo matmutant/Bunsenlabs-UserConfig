@@ -40,19 +40,36 @@
 		</item>
 		<separator/>
 		<menu id="root-menu-1916" label="Custom Scripts">
+			<menu id="root-menu-1916-61815" label="PowerManagement">
+				<item label="PowerMode (w/ Cups)">
+					<action name="Execute">
+						<command>gksudo systemctl start cups.socket cups.path cups.service cups-browsed.service &amp;&amp; iw dev wlan0 set power_save off</command>
+					</action>
+				</item>
+				<item label="EcoMode">
+					<action name="Execute">
+						<command>gksudo iw dev wlan0 set power_save on</command>
+					</action>
+				</item>
+				<item label="EcoMode+ (No Cups)">
+					<action name="Execute">
+						<command>gksudo systemctl stop cups.socket cups.path cups.service cups-browsed.service &amp;&amp; iw dev wlan0 set power_save on</command>
+					</action>
+				</item>
+				<item label="(Re)start PowerTOP">
+					<action name="Execute">
+						<command>terminator -e ~/scripts/PowerTOP-Monitor.sh</command>
+					</action>
+				</item>
+				<item label="(Re)start TLP">
+					<action name="Execute">
+						<command>terminator -e ~/scripts/Restart-TLP.sh</command>
+					</action>
+				</item>
+			</menu>
 			<item label="Screen OFF">
 				<action name="Execute">
 					<command>xset dpms force off</command>
-				</action>
-			</item>
-			<item label="PowerMode (w/ Cups)">
-				<action name="Execute">
-					<command>gksudo systemctl start cups.socket cups.path cups.service cups-browsed.service &amp;&amp; iw dev wlan0 set power_save off</command>
-				</action>
-			</item>
-			<item label="EcoMode (No Cups)">
-				<action name="Execute">
-					<command>gksudo systemctl stop cups.socket cups.path cups.service cups-browsed.service &amp;&amp; iw dev wlan0 set power_save on</command>
 				</action>
 			</item>
 			<item label="lxappearance">
@@ -70,14 +87,19 @@
 					<command>gksudo alsactl init</command>
 				</action>
 			</item>
-			<item label="(Re)start PowerTOP">
+			<item label="Taskbar hwmon">
 				<action name="Execute">
-					<command>terminator -e ~/scripts/PowerTOP-Monitor.sh</command>
+					<command>~/scripts/phwmon.py --cpu --mem --fg_mem 555 --fg_cpu d00</command>
 				</action>
 			</item>
-			<item label="(Re)start TLP">
+			<item label="TRIM">
 				<action name="Execute">
-					<command>terminator -e ~/scripts/Restart-TLP.sh</command>
+					<command>terminator -e ~/trim</command>
+				</action>
+			</item>
+			<item label="Wacom ModeSwitcher">
+				<action name="Execute">
+					<command>terminator -e ~/scripts/CTL-480-ModeSwitch.sh</command>
 				</action>
 			</item>
 		</menu>
@@ -162,6 +184,11 @@
 					<command>
                         transmission-gtk
                     </command>
+				</action>
+			</item>
+			<item label="Ubproxy">
+				<action name="Execute">
+					<command>gksudo ~/scripts/ubproxy</command>
 				</action>
 			</item>
 			<item label="HexChat IRC Client">
@@ -259,7 +286,7 @@
 				<item label="How to Edit Menu">
 					<action name="Execute">
 						<command>
-                            yad --button=&quot;OK&quot;:0 --center --window-icon=distributor-logo-bunsenlabs --text-info --title=&quot;How to Edit the Menu&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-menu.txt&quot; --width=900 --height=700 --fontname=Monospace
+                            yad --button=&quot;OK&quot;:0 --center --window-icon=distributor-logo-bunsenlabs --text-info --title=&quot;How to Edit the Menu&quot; --filename=&quot;/usr/share/bunsen/docs/helpfile-menu.txt&quot; --width=900 --height=700 --fontname=Monospace
                         </command>
 					</action>
 				</item>
@@ -399,7 +426,7 @@
 			<separator/>
 			<item label="About Bunsen Alternatives">
 				<action name="Execute">
-					<execute>yad --button=&quot;OK&quot;:0 --center --window-icon=distributor-logo-bunsenlabs --text-info --title=&quot;About Bunsen Alternatives&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-bl-alternatives.txt&quot; --width=900 --height=700 --fontname=Monospace
+					<execute>yad --button=&quot;OK&quot;:0 --center --window-icon=distributor-logo-bunsenlabs --text-info --title=&quot;About Bunsen Alternatives&quot; --filename=&quot;/usr/share/bunsen/docs/helpfile-bl-alternatives.txt&quot; --width=900 --height=700 --fontname=Monospace
                     </execute>
 				</action>
 			</item>
