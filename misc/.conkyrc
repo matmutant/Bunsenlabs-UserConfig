@@ -147,7 +147,7 @@ ${if_existing /media/DataMutant/ConkyStarter}SDCard${goto 60}${fs_used /media/Da
 
 ${goto 60}MEM${alignr}MAX
 #RAM${goto 60}${mem}${alignr}${memmax}
-#Custom colors depending on RAM usage (grey < 60%, Orange <80%, red above)
+#Display Custom colors depending on RAM usage (grey < 60%, Orange <80%, red above)
 RAM${goto 60}${if_match ${memperc} <60}${mem}\
 ${else}${if_match ${memperc} <80}${color orange}${mem}\
 ${else}${color red}${mem}${endif}${endif}${color}${alignr}${memmax}
@@ -155,7 +155,7 @@ Swap${goto 60}${swap}${alignr}${swapmax}
 # debug ${memperc}
 
 CPU:${goto 60}Used${alignr}GHz
-#Custom colors depending on CPU usage (grey <50%, Orange <100%, red at 100%)
+#Display Custom colors depending on CPU usage (grey <50%, Orange <100%, red at 100%)
 Avg${goto 60}${if_match ${cpu cpu0}<10}  ${cpu cpu0}\
 ${else}${if_match ${cpu cpu0}<50} ${cpu cpu0}\
 ${else}${if_match ${cpu cpu0}<100} ${color orange}${cpu cpu0}\
@@ -164,11 +164,11 @@ ${else}${color red}${cpu cpu0}${endif}${endif}${endif}${color}%${alignr}${freq_g
 #Display ACPI temp
 ${goto 60}Acpi${alignr}Critic
 #T°C:${goto 60}${acpitemp}°C${alignr}+100°C
-#Custom colors depending on acpitemp (grey <60°, Orange <70°, red above)
+#Display Custom colors depending on acpitemp (grey <60°, Orange <70°, red above)
 T°C:${goto 60}${if_match ${acpitemp}<60}${acpitemp}\
 ${else}${if_match ${acpitemp}<70}${color orange}${acpitemp}\
 ${else}${color red}${acpitemp}\
-${endif}${color}°C${alignr}+100°C
+${endif}${endif}${color}°C${alignr}+100°C
 
 ${alignc}S H O R T C U T    K E Y S
 ${hr}
