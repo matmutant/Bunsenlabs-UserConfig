@@ -152,7 +152,7 @@ RAM${goto 60}${if_match ${memperc} <60}${mem}\
 ${else}${if_match ${memperc} <80}${color orange}${mem}\
 ${else}${color red}${mem}${endif}${endif}${color}${alignr}${memmax}
 Swap${goto 60}${swap}${alignr}${swapmax}
-${memperc}
+# debug ${memperc}
 
 CPU:${goto 60}Used${alignr}GHz
 #Custom colors depending on CPU usage (grey <50%, Orange <100%, red at 100%)
