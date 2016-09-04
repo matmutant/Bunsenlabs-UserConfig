@@ -22,7 +22,7 @@ options ath9k ps_enable=1
 To set proxy settings easily, I use ![Ubproxy](https://github.com/Sadhanandh/Ubproxy/blob/master/README.md "Ubproxy"]
 
 
-###Custom username@host and root@host colors in CLI : ~/.bashrc
+##Custom username@host and root@host colors in CLI : ~/.bashrc
 ![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_CLI_Colors.png)
 ```
 # uncomment for a colored prompt, if the terminal has the capability; turned
