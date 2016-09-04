@@ -18,8 +18,12 @@ ath9k.conf file should be placed in /etc/modprobe.d. The following line enables 
 options ath9k ps_enable=1
 ```
 
-###Custom username@host colors in CLI : ~/.bashrc
-![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/CustomUsernameColorCLI.png)
+##Proxy
+To set proxy settings easily, I use ![Ubproxy](https://github.com/Sadhanandh/Ubproxy/blob/master/README.md "Ubproxy"]
+
+
+###Custom username@host and root@host colors in CLI : ~/.bashrc
+![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_CLI_Colors.png)
 ```
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -28,10 +32,12 @@ force_color_prompt=yes
 ```
 line 60:
 ```
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;47;32m\]\u\[\033[01;30m\]@\[\033[01;90m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+```
+And for the Root .bashrc
+```
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;47;31m\]\u\[\033[01;30m\]@\[\033[01;90m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 ```
-This is not going to stick that way, user might get green and root red instead -later-...
-
 
 ## Conky
 The Default Conky in Bunsenlabs gives nearly everything I needed, though here is a few customisation i did:
