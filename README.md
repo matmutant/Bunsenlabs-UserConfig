@@ -1,6 +1,14 @@
 # Bunsenlabs-UserConfig
 This repository contains my personal scripts and modified config files for my Bunsenlabs netbook in attempt to fit my own needs
 
+###Hardware:
+ASUS 1011PX
+CPU: Atom N570
+RAM: 1GB (991MB available for system)
+SSD: Intel 330 "Mapple Crest" 60GB
+SDcard: Sandisk Extreme SDHC 32GB
+OS: Bunsenlabs Hydrogen
+
 ## /etc/fstab
 As an external SDcard is used as main Data storage, the PC needs to automount it, though it should fail if the card is not there (using the 'nofail' arg):
 ```
