@@ -1,6 +1,37 @@
 # Bunsenlabs-UserConfig
 This repository contains my personal scripts and modified config files for my Bunsenlabs netbook in attempt to fit my own needs
 
+## /etc/fstab
+As an external SDcard is used as main Data storage, the PC needs to automount it, though it should fail if the card is not there (using the 'nofail' arg):
+```
+UUID=[UUID_number]	/media/DataMutant ext4	auto,nofail,noatime,rw,user    0   0
+```
+##Wifi working at boot without the need of enabling it before shutdown
+To get wifi working at boot without tlp workaround, grub needs the following added to kernel parameters:
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi=Linux"
+```
+
+##Wifi power save
+ath9k.conf file should be placed in /etc/modprobe.d. The following line enables "sudo iw dev wlan0 set power_save on" to work properly
+```
+options ath9k ps_enable=1
+```
+
+###Custom username@host colors in CLI : ~/.bashrc
+![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/CustomUsernameColorCLI.png)
+```
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+```
+line 60:
+```
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;47;31m\]\u\[\033[01;30m\]@\[\033[01;90m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+```
+This is not going to stick that way, user might get green and root red instead -later-...
+
 
 ## Conky
 The Default Conky in Bunsenlabs gives nearly everything I needed, though here is a few customisation i did:
