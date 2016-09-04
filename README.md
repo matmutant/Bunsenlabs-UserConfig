@@ -36,7 +36,7 @@ This is not going to stick that way, user might get green and root red instead -
 ## Conky
 The Default Conky in Bunsenlabs gives nearly everything I needed, though here is a few customisation i did:
 Adding acpitemp display and conditionnal colors to the following items: CPU usage, RAM usage, and acpitemp T°C
-![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_lowRAM_MediumTemp_LowCPU_.png.png)![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_MediumRAM_HighTemp_.png)![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_lowRAM_HighTemp_HighCPU_.png)
+![lowRAM_MediumTemp_LowCPU](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_lowRAM_MediumTemp_LowCPU_.png.png)![MediumRAM_HighTemp](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_MediumRAM_HighTemp_.png)![lowRAM_HighTemp_HighCPU](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_lowRAM_HighTemp_HighCPU_.png)
 
 ### acpitemp conditionnal colors:
 Displays Custom colors depending on acpitemp (grey <60°, Orange <70°, red above)
@@ -69,3 +69,10 @@ Displays Data SDCard if plugged in using a simple blank file (named ConkyStarter
 ```
 ${if_existing /media/DataMutant/ConkyStarter}SDCard${goto 60}${fs_used /media/DataMutant}${alignr}${fs_size /media/DataMutant}${else}No SDCard${endif}
 ```
+
+##phwmon.py custom commands
+using [phwomn.py](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/scripts/phwmon.py "phwomn.py")
+```
+phwmon.py --cpu --mem --fg_mem 555 --fg_cpu d00
+```
+![phmon](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/scripts/phwmon.png)
