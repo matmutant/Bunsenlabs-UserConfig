@@ -32,8 +32,8 @@ To set proxy settings easily, I use ![Ubproxy](https://github.com/Sadhanandh/Ubp
 ##FIX Xfce4-sxcreenshooter grey screenshot with Compton
 Zone screenshots are greyed (shadowed) when took with xfce4-screenshooter when Compositing is enabled
 Disabling compositing is NOT a solution, why would you give up shadows? (or use scrot instead)
-~/.config/compton.conf
-change 
+
+in ~/.config/compton.conf change 
 ```
 shadow-exclude = [ "i:e:Conky" ];
 ```
