@@ -29,6 +29,22 @@ options ath9k ps_enable=1
 ##Proxy
 To set proxy settings easily, I use ![Ubproxy](https://github.com/Sadhanandh/Ubproxy/blob/master/README.md "Ubproxy"]
 
+##FIX Xfce4-sxcreenshooter grey screenshot with Compton
+Zone screenshots are greyed (shadowed) when took with xfce4-screenshooter when Compositing is enabled
+Disabling compositing is NOT a solution, why would you give up shadows? (or use scrot instead)
+~/.config/compton.conf
+change 
+```
+shadow-exclude = [ "i:e:Conky" ];
+```
+to
+```
+shadow-exclude = [ "i:e:Conky", "i:e:xfce4-screenshooter" ];
+```
+Before and  After
+
+![Before](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_ComptonDefault.png)![After](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_ComptonExclude_XfceSS.png)
+
 
 ##Custom username@host and root@host colors in CLI : ~/.bashrc
 ![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_CLI_Colors.png)
