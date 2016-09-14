@@ -41,19 +41,14 @@
 		<separator/>
 		<menu id="root-menu-1916" label="Custom Scripts">
 			<menu id="root-menu-1916-61815" label="PowerManagement">
-				<item label="PowerMode (w/ Cups)">
+				<item label="PowerMode">
 					<action name="Execute">
-						<command>gksudo systemctl start cups.socket cups.path cups.service cups-browsed.service &amp;&amp; iw dev wlan0 set power_save off</command>
+						<command>gksudo iw dev wlan0 set power_save off</command>
 					</action>
 				</item>
 				<item label="EcoMode">
 					<action name="Execute">
 						<command>gksudo iw dev wlan0 set power_save on</command>
-					</action>
-				</item>
-				<item label="EcoMode+ (No Cups)">
-					<action name="Execute">
-						<command>gksudo systemctl stop cups.socket cups.path cups.service cups-browsed.service &amp;&amp; iw dev wlan0 set power_save on</command>
 					</action>
 				</item>
 				<item label="(Re)start PowerTOP">
@@ -141,6 +136,11 @@
 		</item>
 		<separator/>
 		<menu id="accessories" label="Accessories">
+			<item label="Diffuse file diff">
+				<action name="Execute">
+					<command>diffuse</command>
+				</action>
+			</item>
 			<item label="Catfish File Search">
 				<action name="Execute">
 					<command>
