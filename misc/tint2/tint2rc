@@ -6,6 +6,8 @@
 #
 # For more config file examples, see:
 # http://bunsenlabs.org/topic/3232/my-tint2-config/
+#
+#taskbar_distribute_size = 1 requires tint2 0.12 available from Jessie-Backports
 
 # Background definitions
 # ID 1
@@ -59,8 +61,8 @@ border_color = #888888 20
 # Panel
 panel_monitor = all
 panel_position = top center horizontal
-panel_items = LTSC
-panel_size = 100% 30
+panel_items = TSC
+panel_size = 100% 48
 panel_margin = 0 -1
 panel_padding = 0 0
 panel_dock = 0
@@ -79,6 +81,7 @@ strut_policy = none
 
 # Taskbar
 taskbar_mode = multi_desktop
+taskbar_distribute_size = 1
 taskbar_padding = 6 0 6
 taskbar_background_id = 5
 taskbar_active_background_id = 6
