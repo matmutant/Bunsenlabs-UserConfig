@@ -11,13 +11,13 @@
 # ID 1
 rounded = 0
 border_width = 0
-background_color = #000000 40
+background_color = #000000 80
 border_color = #828282 0
 
 # ID 2 - task active
 rounded = 1
 border_width = 0
-background_color = #d8d8d8 30
+background_color = #d8d8d8 10
 border_color = #d8d8d8 30
 
 # ID 3 - task
@@ -40,8 +40,8 @@ border_color = #000000 0
 
 # ID 6 - active taskbar
 rounded = 0
-border_width = 1
-background_color = #d8d8d8 8
+border_width = 0
+background_color = #d8d8d8 20
 border_color = #d8d8d8 0
 
 # ID 7 - tooltip
@@ -56,11 +56,19 @@ border_width = 1
 background_color = #888888 20
 border_color = #888888 20
 
+# ID 9
+rounded = 1
+border_width = 0
+background_color = #000000 80
+border_color = #828282 0
+
 # Panel
 panel_monitor = all
 panel_position = bottom center horizontal
-panel_items = L
-panel_size = 35% 48
+#panel_items = L
+panel_items = LT
+#panel_size = 36% 48
+panel_size = 100% 48
 panel_margin = 0 -1
 panel_padding = 0 0
 panel_dock = 0
@@ -77,15 +85,16 @@ strut_policy = none
 
 # Taskbar
 taskbar_mode = single_desktop
-taskbar_padding = 6 0 6
-taskbar_background_id = 5
+taskbar_distribute_size = 1
+taskbar_padding = 2 0 0
+taskbar_background_id = 6
 taskbar_active_background_id = 6
 taskbar_name = 0
 taskbar_name_background_id = 0
 taskbar_name_active_background_id = 0
-taskbar_name_font = Sans 9
-taskbar_name_font_color = #828282 100
-taskbar_name_active_font_color = #828282 100
+taskbar_name_font = Serif 12 Bold
+taskbar_name_font_color = #ffffff 100
+taskbar_name_active_font_color = #ffffff 100
 
 # Tasks
 urgent_nb_of_blink = 20
@@ -94,7 +103,7 @@ task_text = 0
 task_centered = 1
 task_maximum_size = 40 40
 task_padding = 2 2
-task_background_id = 3
+task_background_id = 9
 task_active_background_id = 2
 task_urgent_background_id = 4
 task_iconified_background_id = 3
@@ -115,7 +124,7 @@ font_shadow = 0
 
 # Launcher
 launcher_padding = 8 4 4
-launcher_background_id = 0
+launcher_background_id = 9
 launcher_icon_size = 0
 # decolorize launcher icons
 #launcher_icon_asb = 100 -100 -5
@@ -128,11 +137,13 @@ launcher_icon_theme = Faenza-Dark-Bunsen
 # Each launcher_item_app must be a full path to a .desktop file
 # this will have to be made:
 #launcher_item_app = /usr/share/applications/bl-www-browser.desktop
+launcher_item_app = /usr/share/applications/gmrun.desktop
 launcher_item_app = /usr/share/applications/vivaldi-stable.desktop
 launcher_item_app = /usr/share/applications/firefox-esr.desktop
 launcher_item_app = /usr/share/applications/bl-file-manager.desktop
 launcher_item_app = /usr/share/applications/bl-text-editor.desktop
 launcher_item_app = /usr/share/applications/bl-terminal-emulator.desktop
+launcher_item_app = /usr/share/applications/arandr.desktop
 launcher_item_app = /usr/share/applications/libreoffice-startcenter.desktop
 launcher_item_app = /usr/share/applications/libreoffice-writer.desktop
 launcher_item_app = /usr/share/applications/gimp.desktop
