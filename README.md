@@ -101,7 +101,9 @@ ${if_existing /media/DataMutant/ConkyStarter}SDCard${goto 60}${fs_used /media/Da
 ```
 
 ##phwmon.py custom commands
-using [phwomn.py](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/scripts/phwmon.py "phwomn.py")
+using [phwomn.py](https://gitlab.com/o9000/phwmon/blob/master/phwmon.py "phwomn.py")
+Dependencies: sudo apt-get install python-gtk2 python-psutil;
+doc: https://forums.bunsenlabs.org/viewtopic.php?id=967
 ```
 phwmon.py --cpu --mem --fg_mem 555 --fg_cpu d00
 ```
