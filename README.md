@@ -100,6 +100,10 @@ Displays Data SDCard if plugged in using a simple blank file (named ConkyStarter
 ${if_existing /media/DataMutant/ConkyStarter}SDCard${goto 60}${fs_used /media/DataMutant}${alignr}${fs_size /media/DataMutant}${else}No SDCard${endif}
 ```
 
+##Tint2 Config (WIP)
+See Tint2 Folder for now...
+
+
 ##phwmon.py custom commands
 Using [phwomn.py](https://gitlab.com/o9000/phwmon/blob/master/phwmon.py "phwomn.py")
 Dependencies: sudo apt-get install python-gtk2 python-psutil;
