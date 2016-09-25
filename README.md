@@ -1,5 +1,8 @@
 # Bunsenlabs-UserConfig
-This repository contains my personal scripts and modified config files for my Bunsenlabs netbook in attempt to fit my own needs
+This repository contains my personal scripts and modified config files for my Bunsenlabs netbook in attempt to fit my own needs.
+
+Another intesresting config by oswriter is available [here](http://opensourcewriter.com/how-i-configured-my-bunsenlabs-linux-desktop/).
+
 
 ###Hardware:
 ######ASUS 1011PX
@@ -27,10 +30,10 @@ options ath9k ps_enable=1
 ```
 
 ##Proxy
-To set proxy settings easily, I use ![Ubproxy](https://github.com/Sadhanandh/Ubproxy/blob/master/README.md "Ubproxy")
+To set proxy settings easily, I use [Ubproxy](https://github.com/Sadhanandh/Ubproxy/blob/master/README.md)
 
 ##Sound Issue: 
-Refer to Head_on_a_Stick tutorial here : https://forums.bunsenlabs.org/viewtopic.php?id=2266
+Refer to Head_on_a_Stick tutorial: [here](https://forums.bunsenlabs.org/viewtopic.php?id=2266)
 
 ##FIX Xfce4-sxcreenshooter grey screenshot with Compton
 Zone screenshots are greyed (shadowed) when took with xfce4-screenshooter when Compositing is enabled
@@ -115,3 +118,7 @@ Dependencies: sudo apt-get install python-gtk2 python-psutil;
 phwmon.py --cpu --mem --fg_mem 555 --fg_cpu d00
 ```
 ![phmon](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/scripts/phwmon.png)
+
+
+##External links:
+- [Installing Bunsenlabs on an Acer Aspire One Cloudbook A01-131-C7U3](https://forums.bunsenlabs.org/viewtopic.php?id=2200), and [here](https://github.com/tmlbl/acer-cloudbook-11-bunsenlabs)
