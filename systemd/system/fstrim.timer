@@ -8,8 +8,8 @@ Description=Discard unused blocks at boot
 Documentation=man:fstrim
 
 [Timer]
-#OnCalendar=daily
-OnBootSec=1min
+OnCalendar=daily
+#OnBootSec=1min
 AccuracySec=1h
 Persistent=true
 
