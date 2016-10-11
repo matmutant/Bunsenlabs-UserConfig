@@ -17,6 +17,63 @@ As an external SDcard is used as main Data storage, the PC needs to automount it
 ```
 UUID=[UUID_number]	/media/DataMutant ext4	auto,nofail,noatime,rw,user    0   0
 ```
+##Trim
+Enabling trim when using and SSD is advisable to maintain good performance through the SSD life
+(Note that in my case swap is also enabled on that SSD which could lead to early wear)
+
+There are a few ways to enable trim. Here I prefered the discontinued way (ie. once a day).
+
+Using the Systemd method needs the following files:
+
+/etc/systemd/fstrim.service (working on Bunsenlabs) or /usr/lib/systemd/system/fstrim.service
+
+==> This file tells where to get the script to launch
+```
+[Unit]
+Description=Discard unused blocks
+
+[Service]
+Type=oneshot
+ExecStart=/home/matmutant/scripts/trim3.sh
+```
+/etc/systemd/fstrim.timer (working on Bunsenlabs) or /usr/lib/systemd/system/fstrim.timer
+
+==> this file tells when launching the script
+```
+[Unit]
+Description=Discard unused blocks at boot
+Documentation=man:fstrim
+
+[Timer]
+OnCalendar=daily
+#OnBootSec=1min
+AccuracySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+The script can be placed anywhere, but needs to be pointed by the .service
+
+==> it performs the fstrim, and writes output on a dedicated file (for debugging purpose)
+
+Make sure fstrim is in /sbin/fstrim or modify the path in the script according to its location ('which fstrim')
+```
+#!/bin/sh
+OutputFile="/home/[username]/trim-output"
+Touch="/bin/touch"
+Date="/bin/date"
+Fstrim="/sbin/fstrim"
+if [ ! -w "$OutputFile" ]; then
+	#if file doesn't exist it is created
+	$Touch "$OutputFile"
+fi
+#appends date to file and then performs trim to / dir
+$Date >> "$OutputFile" && $Fstrim -v / >> "$OutputFile"
+
+exit 0
+```
+
 ##Wifi working at boot without the need of enabling it before shutdown
 To get wifi working at boot without tlp workaround, grub needs the following added to kernel parameters:
 ```
@@ -37,6 +94,7 @@ Refer to Head_on_a_Stick tutorial: [here](https://forums.bunsenlabs.org/viewtopi
 
 ##FIX Xfce4-sxcreenshooter grey screenshot with Compton
 Zone screenshots are greyed (shadowed) when took with xfce4-screenshooter when Compositing is enabled
+
 Disabling compositing is NOT a solution, why would you give up shadows? (or use scrot instead)
 
 in ~/.config/compton.conf change 
@@ -71,6 +129,7 @@ And for the Root .bashrc
 
 ## Conky
 The Default Conky in Bunsenlabs gives nearly everything I needed, though here is a few customisation i did:
+
 Adding acpitemp display and conditionnal colors to the following items: CPU usage, RAM usage, and acpitemp T°C
 ![lowRAM_MediumTemp_LowCPU](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_lowRAM_MediumTemp_LowCPU_.png.png)![MediumRAM_HighTemp](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_MediumRAM_HighTemp_.png)![lowRAM_HighTemp_HighCPU](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_lowRAM_HighTemp_HighCPU_.png)
 
