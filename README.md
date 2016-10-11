@@ -57,7 +57,7 @@ The script can be placed anywhere, but needs to be pointed by the .service
 
 ==> it performs the fstrim, and writes output on a dedicated file (for debugging purpose)
 
-Make sure fstrim is in /sbin/fstrim or modify the path in the script according to its location ('which fstrim')
+Make sure fstrim is in /sbin/fstrim or modify the path in the script according to its location (```which fstrim```)
 ```
 #!/bin/sh
 OutputFile="/home/[username]/trim-output"
@@ -73,6 +73,8 @@ $Date >> "$OutputFile" && $Fstrim -v / >> "$OutputFile"
 
 exit 0
 ```
+Enable the service with:
+```sudo systemctl enable [serviceName].timer```
 
 ##Wifi working at boot without the need of enabling it before shutdown
 To get wifi working at boot without tlp workaround, grub needs the following added to kernel parameters:
