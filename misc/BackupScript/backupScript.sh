@@ -5,6 +5,8 @@ destination="/parth/to/destination"
 #echo $source
 #echo $destination
 # --progress
+echo -e "use var '\$source' and '\$destination' to modify the source and destination"
+echo -e "refer to rsync manual to customize the options"
 rsync -aXS --dry-run --progress --delete-after $source $destination
 read -p 'Do you want to Sync new files and remove (in destination) deleted files (in source)? (Y/n) : ' opt0
 # echo $opt0
