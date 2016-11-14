@@ -92,11 +92,18 @@
 					<command>terminator -e ~/trim</command>
 				</action>
 			</item>
-			<item label="Wacom ModeSwitcher">
-				<action name="Execute">
-					<command>terminator -e ~/scripts/CTL-480-ModeSwitch.sh</command>
-				</action>
-			</item>
+			<menu id="root-menu-1916-182730" label="InPut modes">
+				<item label="Mouse ModeSwitcher">
+					<action name="Execute">
+						<command>terminator -e ~/scripts/Mouse-Keybinds-Remap-master/mouseKeybindsRemap.sh 14</command>
+					</action>
+				</item>
+				<item label="Wacom ModeSwitcher">
+					<action name="Execute">
+						<command>terminator -e ~/scripts/CTL-480-ModeSwitch.sh</command>
+					</action>
+				</item>
+			</menu>
 		</menu>
 		<separator/>
 		<item label="Terminal">
@@ -136,6 +143,13 @@
 		</item>
 		<separator/>
 		<menu id="accessories" label="Accessories">
+			<menu id="accessories-262022" label="Games">
+				<item label="Flare">
+					<action name="Execute">
+						<command>/usr/games/flare --game=flare-game</command>
+					</action>
+				</item>
+			</menu>
 			<item label="Diffuse file diff">
 				<action name="Execute">
 					<command>diffuse</command>
