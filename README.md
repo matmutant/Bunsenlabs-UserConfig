@@ -58,7 +58,7 @@ The script can be placed anywhere, but needs to be pointed by the .service
 ==> it performs the fstrim, and writes output on a dedicated file (for debugging purpose)
 
 Make sure fstrim is in /sbin/fstrim or modify the path in the script according to its location (```which fstrim```)
-```
+```bash
 #!/bin/sh
 OutputFile="/home/[username]/trim-output"
 Touch="/bin/touch"
@@ -128,7 +128,38 @@ And for the Root .bashrc
 ```
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;47;31m\]\u\[\033[01;30m\]@\[\033[01;90m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 ```
-
+## Tiling
+Openbox is not a Tiling WM, but having  some  basic tiling features like vertical/horizontal splitted screen, inverting wich window is on the left/right or top/bottom.  
+The following is only the vertical tiling with active window to left (see ![openbox rc.xml](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/openbox/rc.xml) to find the full code).  
+```xml
+    <!-- Tiling left right-->
+    <!-- Vertical tiling active to left-->
+    <keybind key="C-A-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <x>0</x>
+        <y>0</y>
+      </action>
+      <!-- Vertical tiling next window to right-->
+      <action name="NextWindow">
+         <interactive>no</interactive>
+         <dialog>none</dialog>
+         <finalactions>
+           <action name="UnmaximizeFull"/>
+           <action name="MoveResizeTo">
+             <width>50%</width>
+           </action>
+           <action name="MaximizeVert"/>
+           <action name="MoveResizeTo">
+             <x>-0</x>
+             <y>0</y>
+            </action>
+         </finalactions>
+      </action>
+    </keybind>
+```
 ## Conky
 The Default Conky in Bunsenlabs gives nearly everything I needed, though here is a few customisation i did:
 
