@@ -476,6 +476,7 @@
     <keybind key="W-Up">
       <action name="GrowToEdgeNorth"/>
     </keybind>
+    <!-- Tiling left right-->
     <!-- Vertical tiling active to left-->
     <keybind key="C-A-Left">
       <action name="UnmaximizeFull"/>
@@ -524,6 +525,59 @@
            <action name="MoveResizeTo">
              <x>0</x>
              <y>0</y>
+            </action>
+         </finalactions>
+      </action>
+    </keybind>
+    <!-- Tiling Up/Down-->
+    <!-- Horizontal tiling active to bottom-->
+    <keybind key="C-A-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeHorz"/>
+      <action name="MoveResizeTo">
+        <height>50%</height>
+        <x>0</x>
+        <y>-0</y>
+      </action>
+      <!-- Horizontal tiling next window to top-->
+      <action name="NextWindow">
+         <interactive>no</interactive>
+         <dialog>none</dialog>
+         <finalactions>
+           <action name="UnmaximizeFull"/>
+           <action name="MoveResizeTo">
+             <height>50%</height>
+           </action>
+           <action name="MaximizeHorz"/>
+           <action name="MoveResizeTo">
+             <x>0</x>
+             <y>0</y>
+            </action>
+         </finalactions>
+      </action>
+    </keybind>
+    <!-- Horizontal tiling active to top-->
+    <keybind key="C-A-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeHorz"/>
+      <action name="MoveResizeTo">
+        <height>50%</height>
+        <x>0</x>
+        <y>0</y>
+      </action>
+      <!-- Horizontal tiling next window to bottom-->
+      <action name="NextWindow">
+         <interactive>no</interactive>
+         <dialog>none</dialog>
+         <finalactions>
+           <action name="UnmaximizeFull"/>
+           <action name="MoveResizeTo">
+             <height>50%</height>
+           </action>
+           <action name="MaximizeHorz"/>
+           <action name="MoveResizeTo">
+             <x>0</x>
+             <y>-0</y>
             </action>
          </finalactions>
       </action>
