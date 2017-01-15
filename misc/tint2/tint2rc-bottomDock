@@ -102,7 +102,7 @@ task_icon = 1
 task_text = 0
 task_centered = 1
 task_maximum_size = 40 40
-task_padding = 2 2
+task_padding = 2 4
 task_background_id = 9
 task_active_background_id = 2
 task_urgent_background_id = 4
@@ -137,8 +137,8 @@ launcher_icon_theme = Faenza-Dark-Bunsen
 # Each launcher_item_app must be a full path to a .desktop file
 # this will have to be made:
 #launcher_item_app = /usr/share/applications/bl-www-browser.desktop
-launcher_item_app = /usr/share/applications/gmrun.desktop
-launcher_item_app = /usr/share/applications/vivaldi-stable.desktop
+#launcher_item_app = /usr/share/applications/gmrun.desktop
+#launcher_item_app = /usr/share/applications/vivaldi-stable.desktop
 launcher_item_app = /usr/share/applications/firefox-esr.desktop
 launcher_item_app = /usr/share/applications/bl-file-manager.desktop
 launcher_item_app = /usr/share/applications/bl-text-editor.desktop
