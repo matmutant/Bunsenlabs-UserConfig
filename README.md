@@ -5,11 +5,11 @@ Another intesresting config by oswriter is available [here](http://opensourcewri
 
 
 ###Hardware:
-######ASUS 1011PX
-- [x] CPU: Atom N570
-- [x] RAM: 1GB (991MB available for system)
-- [x] SSD: Intel 330 "Mapple Crest" 60GB
-- [x] SDcard: Sandisk Extreme SDHC 32GB
+######HP EliteBook 2540p
+- [x] CPU: Intel(R) Core(TM) i7 CPU       L 640  @ 2.13GHz
+- [x] RAM: 2GB (1.82 available for system)
+- [x] HDD: Toshiba 160BG, 5400rpm (1.8")
+- [x] SDcard: 
 - [x] OS: Bunsenlabs Hydrogen
 
 ## /etc/fstab
@@ -17,7 +17,7 @@ As an external SDcard is used as main Data storage, the PC needs to automount it
 ```
 UUID=[UUID_number]	/media/DataMutant ext4	auto,nofail,noatime,rw,user    0   0
 ```
-##Trim
+##Trim ==> kept here for potential SSD upgrade
 Enabling trim when using and SSD is advisable to maintain good performance through the SSD life
 (Note that in my case swap is also enabled on that SSD which could lead to early wear)
 
