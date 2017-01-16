@@ -13,7 +13,7 @@ Another intesresting config by oswriter is available [here](http://opensourcewri
 - [x] OS: Bunsenlabs Hydrogen
 
 ## /etc/fstab
-As an external SDcard is used as main Data storage, the PC needs to automount it, though it should fail if the card is not there (using the 'nofail' arg):
+As an external SDcard is used as main Data storage, the PC needs to automount it, though it should not fail if the card is not there (using the 'nofail' arg):
 ```
 UUID=[UUID_number]	/media/DataMutant ext4	auto,nofail,noatime,rw,user    0   0
 ```
