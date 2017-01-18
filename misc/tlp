@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# modified TLP config to try-fit my Asus 1011PX Netbook, placed in /etc/default/
+# modified TLP config to try-fit an HP EliteBook 2540p, placed in /etc/default/
 # tlp - Parameters for power save
 # See full explanation: http://linrunner.de/en/tlp/docs/tlp-configuration.html
 
@@ -36,16 +36,16 @@ MAX_LOST_WORK_SECS_ON_BAT=60
 #   You *must* disable your distribution's governor settings or conflicts will
 #   occur. ondemand is sufficient for *almost all* workloads, you should know
 #   what you're doing!
-#CPU_SCALING_GOVERNOR_ON_AC=powersave
-#CPU_SCALING_GOVERNOR_ON_BAT=powersave
+CPU_SCALING_GOVERNOR_ON_AC=ondemand
+CPU_SCALING_GOVERNOR_ON_BAT=powersave
 
 # Set the min/max frequency available for the scaling governor.
 # Possible values strongly depend on your CPU. For available frequencies see
 # the output of tlp-stat -p.
 #CPU_SCALING_MIN_FREQ_ON_AC=0
-CPU_SCALING_MAX_FREQ_ON_AC=1667000
+#CPU_SCALING_MAX_FREQ_ON_AC=0
 #CPU_SCALING_MIN_FREQ_ON_BAT=0
-CPU_SCALING_MAX_FREQ_ON_BAT=1333000
+#CPU_SCALING_MAX_FREQ_ON_BAT=0
 
 # Set Intel P-state performance: 0..100 (%)
 # Limit the max/min P-state to control the power dissipation of the CPU.
@@ -188,8 +188,7 @@ RUNTIME_PM_ALL=1
 # (should prevent accidential power on of hybrid graphics' discrete part).
 # Default is "radeon nouveau"; use "" to disable the feature completely.
 # Separate multiple drivers with spaces.
-#RUNTIME_PM_DRIVER_BLACKLIST="radeon nouveau"
-RUNTIME_PM_DRIVER_BLACKLIST=""
+RUNTIME_PM_DRIVER_BLACKLIST="radeon nouveau"
 
 # Set to 0 to disable, 1 to enable USB autosuspend feature.
 USB_AUTOSUSPEND=1
@@ -219,11 +218,11 @@ RESTORE_DEVICE_STATE_ON_STARTUP=0
 
 # Radio devices to disable on startup: bluetooth, wifi, wwan.
 # Separate multiple devices with spaces.
-DEVICES_TO_DISABLE_ON_STARTUP="bluetooth wifi wwan"
+DEVICES_TO_DISABLE_ON_STARTUP="bluetooth wwan"
 
 # Radio devices to enable on startup: bluetooth, wifi, wwan.
 # Separate multiple devices with spaces.
-DEVICES_TO_ENABLE_ON_STARTUP=""
+DEVICES_TO_ENABLE_ON_STARTUP="wifi"
 
 # Radio devices to disable on shutdown: bluetooth, wifi, wwan
 # (workaround for devices that are blocking shutdown).
