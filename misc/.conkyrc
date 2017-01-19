@@ -139,9 +139,12 @@ Host:${alignr}${nodename}
 Uptime:${alignr}${uptime}
 UTC:${alignr}${utime %H:%M}
 
+Battery:${alignr}Time left:
+${battery}${alignr}${battery_time}
+
 ${goto 60}Used${alignr}Size
 Root${goto 60}${fs_used /}${alignr}${fs_size /}
-#Home${goto 60}${fs_used /home}${alignr}${fs_size /home}
+Home${goto 60}${fs_used /home}${alignr}${fs_size /home}
 #Display Data SDCard if plugged in using a simple blank file present in the card.
 ${if_existing /media/DataMutant/ConkyStarter}SDCard${goto 60}${fs_used /media/DataMutant}${alignr}${fs_size /media/DataMutant}${else}No SDCard${endif}
 
@@ -158,17 +161,48 @@ CPU:${goto 60}Used${alignr}GHz
 #Display Custom colors depending on CPU usage (grey <50%, Orange <100%, red at 100%)
 Avg${goto 60}${if_match ${cpu cpu0}<10}  ${cpu cpu0}\
 ${else}${if_match ${cpu cpu0}<50} ${cpu cpu0}\
-${else}${if_match ${cpu cpu0}<100} ${color orange}${cpu cpu0}\
-${else}${color red}${cpu cpu0}${endif}${endif}${endif}${color}%${alignr}${freq_g}
+${else}${if_match ${cpu cpu0}<90} ${color orange}${cpu cpu0}\
+${else}${color red}${cpu cpu0}${endif}${endif}${endif}${color}%\
+${goto 100}${cpugraph cpu0 10,60 FFFFFF FF0000 -l -t}${alignr}${freq_g}
+[0]${goto 60}${if_match ${cpu cpu1}<10}  ${cpu cpu1}\
+${else}${if_match ${cpu cpu1}<50} ${cpu cpu1}\
+${else}${if_match ${cpu cpu1}<90} ${color orange}${cpu cpu1}\
+${else}${color red}${cpu cpu1}${endif}${endif}${endif}${color}%\
+${alignr}${cpubar cpu1 10,107}
+[1]${goto 60}${if_match ${cpu cpu2}<10}  ${cpu cpu2}\
+${else}${if_match ${cpu cpu2}<50} ${cpu cpu2}\
+${else}${if_match ${cpu cpu2}<90} ${color orange}${cpu cpu2}\
+${else}${color red}${cpu cpu2}${endif}${endif}${endif}${color}%\
+${alignr}${cpubar cpu2 10,107}
+[2]${goto 60}${if_match ${cpu cpu3}<10}  ${cpu cpu3}\
+${else}${if_match ${cpu cpu3}<50} ${cpu cpu3}\
+${else}${if_match ${cpu cpu3}<90} ${color orange}${cpu cpu3}\
+${else}${color red}${cpu cpu3}${endif}${endif}${endif}${color}%\
+${alignr}${cpubar cpu3 10,107}
+[3]${goto 60}${if_match ${cpu cpu3}<10}  ${cpu cpu3}\
+${else}${if_match ${cpu cpu4}<50} ${cpu cpu4}\
+${else}${if_match ${cpu cpu4}<90} ${color orange}${cpu cpu4}\
+${else}${color red}${cpu cpu4}${endif}${endif}${endif}${color}%\
+${alignr}${cpubar cpu4 10,107}
+
 
 #Display ACPI temp
 ${goto 60}Acpi${alignr}Critic
 #T°C:${goto 60}${acpitemp}°C${alignr}+100°C
 #Display Custom colors depending on acpitemp (grey <60°, Orange <70°, red above)
-T°C:${goto 60}${if_match ${acpitemp}<60}${acpitemp}\
-${else}${if_match ${acpitemp}<70}${color orange}${acpitemp}\
-${else}${color red}${acpitemp}\
-${endif}${endif}${color}°C${alignr}+100°C
+T°C:${goto 60}${if_match ${hwmon temp 8}<40}${hwmon temp 8}\
+${else}${if_match ${hwmon temp 8}<70}${color orange}${hwmon temp 8}\
+${else}${color red}${hwmon temp 8}\
+${endif}${endif}${color}°C${alignr}+128°C
+${goto 60}${if_match ${hwmon temp 9}<40}${hwmon temp 9}\
+${else}${if_match ${hwmon temp 9}<70}${color orange}${hwmon temp 9}\
+${else}${color red}${hwmon temp 9}\
+${endif}${endif}${color}°C${alignr}+128°C
+${goto 60}${if_match ${hwmon temp 10}<40}${hwmon temp 10}\
+${else}${if_match ${hwmon temp 10}<70}${color orange}${hwmon temp 10}\
+${else}${color red}${hwmon temp 10}\
+${endif}${endif}${color}°C${alignr}+128°C
+
 
 ${alignc}S H O R T C U T    K E Y S
 ${hr}
