@@ -139,5 +139,5 @@ TEXT
 ${alignc}${color0}${time %X}
 ${alignc}${color0}${time %d %b %Y}${color}
 ${goto 28}${color} MO TU WE TH FR SA SU
-${goto 28}${color1}${execpi 1800 LAR=`date +%-d`; ncal -bh | sed '2d' | sed -e '1d' -e 's/\<'$LAR'\>/${color0}&${color1}/' | sed ':a;N;$!ba;s/\n/\n${goto 28}/g'}${color}${font}
+${goto 36}${color1}${execpi 1800 LAR=`date +%-d`; ncal -bh | sed '2d' | sed -e '1d' -e 's/\<'$LAR'\>/${color0}&${color1}/' | sed ':a;N;$!ba;s/\n/\n${goto 36}/g'}${color}${font}
 
