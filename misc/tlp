@@ -11,7 +11,7 @@ TLP_ENABLE=1
 
 # Operation mode when no power supply can be detected: AC, BAT
 # Concerns some desktop and embedded hardware only.
-TLP_DEFAULT_MODE=AC
+TLP_DEFAULT_MODE=BAT
 
 # Seconds laptop mode has to wait after the disk goes idle before doing a sync.
 # Non-zero value enables, zero disables laptop mode.
@@ -36,16 +36,16 @@ MAX_LOST_WORK_SECS_ON_BAT=60
 #   You *must* disable your distribution's governor settings or conflicts will
 #   occur. ondemand is sufficient for *almost all* workloads, you should know
 #   what you're doing!
-CPU_SCALING_GOVERNOR_ON_AC=ondemand
-CPU_SCALING_GOVERNOR_ON_BAT=powersave
+#CPU_SCALING_GOVERNOR_ON_AC=ondemand
+#CPU_SCALING_GOVERNOR_ON_BAT=powersave
 
 # Set the min/max frequency available for the scaling governor.
 # Possible values strongly depend on your CPU. For available frequencies see
 # the output of tlp-stat -p.
 #CPU_SCALING_MIN_FREQ_ON_AC=0
 #CPU_SCALING_MAX_FREQ_ON_AC=0
-#CPU_SCALING_MIN_FREQ_ON_BAT=0
-#CPU_SCALING_MAX_FREQ_ON_BAT=0
+CPU_SCALING_MIN_FREQ_ON_BAT=1199000
+CPU_SCALING_MAX_FREQ_ON_BAT=1599000
 
 # Set Intel P-state performance: 0..100 (%)
 # Limit the max/min P-state to control the power dissipation of the CPU.
@@ -61,8 +61,8 @@ CPU_SCALING_GOVERNOR_ON_BAT=powersave
 # Important:
 # - This may conflict with your distribution's governor settings
 # - A value of 1 does *not* activate boosting, it just allows it
-#CPU_BOOST_ON_AC=1
-#CPU_BOOST_ON_BAT=0
+CPU_BOOST_ON_AC=1
+CPU_BOOST_ON_BAT=0
 
 # Minimize number of used CPU cores/hyper-threads under light load conditions
 SCHED_POWERSAVE_ON_AC=0
