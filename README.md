@@ -9,6 +9,7 @@ Another intesresting config by oswriter is available [here](http://opensourcewri
 - [x] CPU: Intel(R) Core(TM) i7 CPU       L 640  @ 2.13GHz
 - [x] RAM: 2GB (1.82 available for system)
 - [x] HDD: Toshiba 160BG, 5400rpm (1.8")
+- [x] SSD: Toshiba A100 120GB
 - [x] SDcard: 
 - [x] OS: Bunsenlabs Hydrogen
 
@@ -17,7 +18,7 @@ As an external SDcard is used as main Data storage, the PC needs to automount it
 ```
 UUID=[UUID_number]	/media/DataMutant ext4	auto,nofail,noatime,rw,user    0   0
 ```
-##Trim ==> kept here for potential SSD upgrade
+##Trim
 Enabling trim when using and SSD is advisable to maintain good performance through the SSD life
 (Note that in my case swap is also enabled on that SSD which could lead to early wear)
 
@@ -74,7 +75,9 @@ $Date >> "$OutputFile" && $Fstrim -v / >> "$OutputFile"
 exit 0
 ```
 Enable the service with:
-```sudo systemctl enable [serviceName].timer```
+```
+sudo systemctl enable [serviceName].timer
+```
 
 ##Wifi working at boot without the need of enabling it before shutdown
 To get wifi working at boot without tlp workaround, grub needs the following added to kernel parameters:
@@ -92,7 +95,14 @@ options ath9k ps_enable=1
 To set proxy settings easily, I use [Ubproxy](https://github.com/Sadhanandh/Ubproxy/blob/master/README.md)
 
 ##Sound Issue: 
-Refer to Head_on_a_Stick tutorial: [here](https://forums.bunsenlabs.org/viewtopic.php?id=2266)
+Refer to Head_on_a_Stick tutorial: [here](https://forums.bunsenlabs.org/viewtopic.php?id=2266)  
+After following the above tutorial, it might still be necessary to perform the following to avoid Banshee conflicting with Master volume: 
+
+```
+echo "flat-volumes = no" >> ~/.config/pulse/daemon.conf
+```
+Then reboot.  
+This will disable "flat volumes" -which enables applications to modify Master volume from their own volume sliders-, now standard Master/Slave behavior will be restored. Thanks to [HoaS](https://forums.bunsenlabs.org/viewtopic.php?id=3252) again for the tip.  
 
 ##FIX Xfce4-sxcreenshooter grey screenshot with Compton
 Zone screenshots are greyed (shadowed) when took with xfce4-screenshooter when Compositing is enabled
