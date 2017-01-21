@@ -1,6 +1,6 @@
 # /usr/lib/systemd/system/fstrim.service
 # Working path on Bunsenlabs:
-# /etc/systemd/fstrim.service
+# /etc/systemd/system/fstrim.service
 
 [Unit]
 Description=Discard unused blocks
