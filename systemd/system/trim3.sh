@@ -9,5 +9,6 @@ if [ ! -w "$OutputFile" ]; then
 fi
 #appends date to file and then performs trim to / dir
 $Date >> "$OutputFile" && $Fstrim -v / >> "$OutputFile"
+$Date >> "$OutputFile" && $Fstrim -v /home >> "$OutputFile"
 
 exit 0
