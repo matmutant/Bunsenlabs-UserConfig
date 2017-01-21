@@ -1,6 +1,6 @@
 # /usr/lib/systemd/system/fstrim.timer
 # Working path on Bunsenlabs:
-# /etc/systemd/fstrim.timer
+# /etc/systemd/system/fstrim.timer
 
 
 [Unit]
