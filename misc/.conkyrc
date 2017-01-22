@@ -187,22 +187,31 @@ ${alignr}${cpubar cpu4 10,107}
 
 
 #Display ACPI temp
-${goto 60}Acpi${alignr}Critic
+${goto 60}T°C${alignr}Critic
 #T°C:${goto 60}${acpitemp}°C${alignr}+100°C
-#Display Custom colors depending on acpitemp (grey <60°, Orange <70°, red above)
-T°C:${goto 60}${if_match ${hwmon temp 8}<40}${hwmon temp 8}\
+#Display Custom colors depending on acpitemp (grey <55°, Orange <70°, red above)
+acpi:${goto 60}${if_match ${hwmon temp 8}<55}${hwmon temp 8}\
 ${else}${if_match ${hwmon temp 8}<70}${color orange}${hwmon temp 8}\
 ${else}${color red}${hwmon temp 8}\
 ${endif}${endif}${color}°C${alignr}+128°C
-${goto 60}${if_match ${hwmon temp 9}<40}${hwmon temp 9}\
+${goto 60}${if_match ${hwmon temp 9}<55}${hwmon temp 9}\
 ${else}${if_match ${hwmon temp 9}<70}${color orange}${hwmon temp 9}\
 ${else}${color red}${hwmon temp 9}\
 ${endif}${endif}${color}°C${alignr}+128°C
-${goto 60}${if_match ${hwmon temp 10}<40}${hwmon temp 10}\
+${goto 60}${if_match ${hwmon temp 10}<55}${hwmon temp 10}\
 ${else}${if_match ${hwmon temp 10}<70}${color orange}${hwmon temp 10}\
 ${else}${color red}${hwmon temp 10}\
 ${endif}${endif}${color}°C${alignr}+128°C
-
+#/!\ hwmon 1 = coretemp-isa-0000 and temp 2 and 4 correspond to core 0 and 2
+Core 0:${goto 60}${if_match ${hwmon 1 temp 2}<55}${hwmon 1 temp 2}\
+${else}${if_match ${hwmon 1 temp 2}<70}${color orange}${hwmon 1 temp 2}\
+${else}${color red}${hwmon 1 temp 2}\
+${endif}${endif}${color}°C${alignr}+105°C
+Core 2:${goto 60}${if_match ${hwmon 1 temp 4}<55}${hwmon 1 temp 4}\
+${else}${if_match ${hwmon 1 temp 4}<70}${color orange}${hwmon 1 temp 4}\
+${else}${color red}${hwmon 1 temp 4}\
+${endif}${endif}${color}°C${alignr}+105°C
+#Test:${hwmon 1 temp 4}
 
 ${alignc}S H O R T C U T    K E Y S
 ${hr}
