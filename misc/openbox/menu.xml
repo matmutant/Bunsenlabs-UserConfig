@@ -77,11 +77,6 @@
 					<command>syndaemon -i 1 -t -d</command>
 				</action>
 			</item>
-			<item label="(Re)start Alsa">
-				<action name="Execute">
-					<command>gksudo alsactl init</command>
-				</action>
-			</item>
 			<item label="Taskbar hwmon">
 				<action name="Execute">
 					<command>~/scripts/phwmon.py --cpu --mem --fg_mem 555 --fg_cpu d00</command>
