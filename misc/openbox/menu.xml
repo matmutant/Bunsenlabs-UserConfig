@@ -95,7 +95,7 @@
 			<menu id="root-menu-1916-182730" label="InPut modes">
 				<item label="Mouse ModeSwitcher">
 					<action name="Execute">
-						<command>terminator -e ~/scripts/Mouse-Keybinds-Remap-master/mouseKeybindsRemap.sh 14</command>
+						<command>terminator -e ~/scripts/Mouse-Keybinds-Remap-master/mouseKeybindsRemap.sh 9</command>
 					</action>
 				</item>
 				<item label="Wacom ModeSwitcher">
@@ -150,6 +150,11 @@
 					</action>
 				</item>
 			</menu>
+			<item label="pSensor">
+				<action name="Execute">
+					<command>psensor</command>
+				</action>
+			</item>
 			<item label="Diffuse file diff">
 				<action name="Execute">
 					<command>diffuse</command>
@@ -225,6 +230,18 @@
 			<menu execute="bl-dropbox-pipemenu" id="dropbox" label="Dropbox"/>
 		</menu>
 		<menu id="office" label="Office">
+			<menu id="office-981048" label="Printer and Scan">
+				<item label="Simple Scan">
+					<action name="Execute">
+						<command>simple-scan</command>
+					</action>
+				</item>
+				<item label="Printer set up">
+					<action name="Execute">
+						<command>system-config-printer</command>
+					</action>
+				</item>
+			</menu>
 			<menu execute="bl-libreoffice-pipemenu" id="libreoffice" label="LibreOffice"/>
 			<item label="Google Docs">
 				<action name="Execute">
