@@ -174,7 +174,7 @@ The following is only the vertical tiling with active window to left (see ![open
 The Default Conky in Bunsenlabs gives nearly everything I needed, though here is a few customisation i did:
 
 Adding acpitemp display and conditionnal colors to the following items: CPU usage, RAM usage, and acpitemp T°C
-![Custom_Conky_For_Elitebook](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_EliteBook-Conky.png)![Calendar Conky](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_ConkyCal-Orange.png)
+![Custom_Conky_For_Elitebook](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/EliteBook2540p/misc/Screenshots/Bunsen_EliteBook-Conky.png)![Calendar Conky](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/EliteBook2540p/misc/Screenshots/Bunsen_ConkyCal-Orange.png)
 
 ### acpitemp conditionnal colors:
 Displays Custom colors depending on acpitemp (grey <60°, Orange <70°, red above)
