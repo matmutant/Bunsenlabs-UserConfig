@@ -198,10 +198,10 @@ ${goto 60}${if_match ${hwmon temp 9}<55}${hwmon temp 9}\
 ${else}${if_match ${hwmon temp 9}<70}${color orange}${hwmon temp 9}\
 ${else}${color red}${hwmon temp 9}\
 ${endif}${endif}${color}°C${alignr}+128°C
-${goto 60}${if_match ${hwmon temp 10}<55}${hwmon temp 10}\
-${else}${if_match ${hwmon temp 10}<70}${color orange}${hwmon temp 10}\
-${else}${color red}${hwmon temp 10}\
-${endif}${endif}${color}°C${alignr}+128°C
+#${goto 60}${if_match ${hwmon temp 10}<55}${hwmon temp 10}\
+#${else}${if_match ${hwmon temp 10}<70}${color orange}${hwmon temp 10}\
+#${else}${color red}${hwmon temp 10}\
+#${endif}${endif}${color}°C${alignr}+128°C
 #/!\ hwmon 1 = coretemp-isa-0000 and temp 2 and 4 correspond to core 0 and 2
 Core 0:${goto 60}${if_match ${hwmon 1 temp 2}<55}${hwmon 1 temp 2}\
 ${else}${if_match ${hwmon 1 temp 2}<70}${color orange}${hwmon 1 temp 2}\
