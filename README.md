@@ -4,8 +4,8 @@ This repository contains my personal scripts and modified config files for my Bu
 Another intesresting config by oswriter is available [here](http://opensourcewriter.com/how-i-configured-my-bunsenlabs-linux-desktop/).
 
 
-###Hardware:
-######HP EliteBook 2540p
+### Hardware:  
+###### HP EliteBook 2540p  
 - [x] CPU: Intel(R) Core(TM) i7 CPU       L 640  @ 2.13GHz
 - [x] RAM: 2GB (1.82 available for system)
 - [x] HDD: Toshiba 160BG, 5400rpm (1.8")
@@ -18,7 +18,7 @@ As an external SDcard is used as main Data storage, the PC needs to automount it
 ```
 UUID=[UUID_number]	/media/DataMutant ext4	auto,nofail,noatime,rw,user    0   0
 ```
-##Trim
+## Trim
 Enabling trim when using and SSD is advisable to maintain good performance through the SSD life
 (Note that in my case swap is also enabled on that SSD which could lead to early wear)
 
@@ -79,22 +79,22 @@ Enable the service with:
 sudo systemctl enable [serviceName].timer
 ```
 
-##Wifi working at boot without the need of enabling it before shutdown
+## Wifi working at boot without the need of enabling it before shutdown
 To get wifi working at boot without tlp workaround, grub needs the following added to kernel parameters:
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi=Linux"
 ```
 
-##Wifi power save
+## Wifi power save
 ath9k.conf file should be placed in /etc/modprobe.d. The following line enables "sudo iw dev wlan0 set power_save on" to work properly
 ```
 options ath9k ps_enable=1
 ```
 
-##Proxy
+## Proxy
 To set proxy settings easily, I use [Ubproxy](https://github.com/Sadhanandh/Ubproxy/blob/master/README.md)
 
-##Sound Issue: 
+## Sound Issue: 
 Refer to Head_on_a_Stick tutorial: [here](https://forums.bunsenlabs.org/viewtopic.php?id=2266)  
 After following the above tutorial, it might still be necessary to perform the following to avoid Banshee conflicting with Master volume: 
 
@@ -104,7 +104,7 @@ echo "flat-volumes = no" >> ~/.config/pulse/daemon.conf
 Then reboot.  
 This will disable "flat volumes" -which enables applications to modify Master volume from their own volume sliders-, now standard Master/Slave behavior will be restored. Thanks to [HoaS](https://forums.bunsenlabs.org/viewtopic.php?id=3252) again for the tip.  
 
-##FIX Xfce4-sxcreenshooter grey screenshot with Compton
+## FIX Xfce4-sxcreenshooter grey screenshot with Compton
 Zone screenshots are greyed (shadowed) when took with xfce4-screenshooter when Compositing is enabled
 
 Disabling compositing is NOT a solution, why would you give up shadows? (or use scrot instead)
@@ -122,7 +122,7 @@ Before and  After
 ![Before](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_ComptonDefault.png)![After](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_ComptonExclude_XfceSS.png)
 
 
-##Custom username@host and root@host colors in CLI : ~/.bashrc
+## Custom username@host and root@host colors in CLI : ~/.bashrc
 ![Baseline](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/Screenshots/Bunsen_CLI_Colors.png)
 ```
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -185,7 +185,7 @@ ${else}${color red}${acpitemp}\
 ${endif}${endif}${color}°C${alignr}+100°C
 ```
 
-###CPU usage conditionnal colors
+### CPU usage conditionnal colors
 Displays Custom colors depending on CPU usage (grey <50%, Orange <100%, red at 100%)
 ```
 Avg${goto 60}${if_match ${cpu cpu0}<10}  ${cpu cpu0}\
@@ -193,7 +193,7 @@ ${else}${if_match ${cpu cpu0}<50} ${cpu cpu0}\
 ${else}${if_match ${cpu cpu0}<100} ${color orange}${cpu cpu0}\
 ${else}${color red}${cpu cpu0}${endif}${endif}${endif}${color}%${alignr}${freq_g}
 ```
-###RAM usage conditionnal colors
+### RAM usage conditionnal colors
 Displays Custom colors depending on RAM usage (grey < 60%, Orange <80%, red above)
 ```
 RAM${goto 60}${if_match ${memperc} <60}${mem}\
@@ -202,17 +202,17 @@ ${else}${color red}${mem}${endif}${endif}${color}${alignr}${memmax}
 Swap${goto 60}${swap}${alignr}${swapmax}
 ```
 
-###SDcard Auto display usage if plugged in
+### SDcard Auto display usage if plugged in
 Displays Data SDCard if plugged in using a simple blank file (named ConkyStarter) present at the root of the card used as Data storage.
 ```
 ${if_existing /media/DataMutant/ConkyStarter}SDCard${goto 60}${fs_used /media/DataMutant}${alignr}${fs_size /media/DataMutant}${else}No SDCard${endif}
 ```
 
-##Tint2 Config (WIP)
+## Tint2 Config (WIP)
 See Tint2 Folder for now...
 
 
-##phwmon.py custom commands
+## phwmon.py custom commands
 Using [phwomn.py](https://gitlab.com/o9000/phwmon/blob/master/phwmon.py "phwomn.py")
 Dependencies: sudo apt-get install python-gtk2 python-psutil;
 [Documentation](https://forums.bunsenlabs.org/viewtopic.php?id=967 "Doc")
@@ -222,5 +222,5 @@ phwmon.py --cpu --mem --fg_mem 555 --fg_cpu d00
 ![phmon](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/scripts/phwmon.png)
 
 
-##External links:
+## External links:
 - [Installing Bunsenlabs on an Acer Aspire One Cloudbook A01-131-C7U3](https://forums.bunsenlabs.org/viewtopic.php?id=2200), and [here](https://github.com/tmlbl/acer-cloudbook-11-bunsenlabs)
