@@ -128,6 +128,15 @@ And for the Root .bashrc
 ```
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;47;31m\]\u\[\033[01;30m\]@\[\033[01;90m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 ```
+## ZSH-like bash-history : ~/.bashrc
+To get the zsh-like history behaviour, happend the following :
+```
+bind '"\eOA": history-search-backward' 
+bind '"\e[A": history-search-backward' 
+bind '"\eOB": history-search-forward' 
+bind '"\e[B": history-search-forward' 
+```  
+
 ## Tiling
 Openbox is not a Tiling WM, but having  some  basic tiling features like vertical/horizontal splitted screen, inverting wich window is on the left/right or top/bottom.  
 The following is only the vertical tiling with active window to left (see ![openbox rc.xml](https://github.com/matmutant/Bunsenlabs-UserConfig/blob/master/misc/openbox/rc.xml) to find the full code).  
