@@ -10,6 +10,10 @@ This repository contains my personal scripts and modified config files for my Bu
 - [x] SDcard: No
 - [x] OS: Bunsenlabs Carbon
 
+### Display and scaling  
+## DPI setting  
+Limiting eye strain with increased item size: set `Xft.dpi=144` in `~/.Xresources`
+
 
 ### TO BE DONE --> NONE OF THE BELOW IS UP TO DATE WITH FZ-M1  
 ## 
