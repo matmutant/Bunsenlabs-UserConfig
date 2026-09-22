@@ -1,17 +1,17 @@
 # Bunsenlabs-UserConfig
 This repository contains my personal scripts and modified config files for my Bunsenlabs netbook in attempt to fit my own needs.
 
-Another intesresting config by oswriter is available [here](http://opensourcewriter.com/how-i-configured-my-bunsenlabs-linux-desktop/).
-
 
 ### Hardware:  
-###### ASUS 1011PX  
-- [x] CPU: Atom N570
-- [x] RAM: 1GB (991MB available for system)
-- [x] SSD: Intel 330 "Mapple Crest" 60GB
-- [x] SDcard: Sandisk Extreme SDHC 32GB
-- [x] OS: Bunsenlabs Hydrogen
+###### PANASONIC FZ-M1 mk3  
+- [x] CPU: 
+- [x] RAM: 
+- [x] SSD: 
+- [x] SDcard: 
+- [x] OS: Bunsenlabs Carbon
 
+
+### TO BE DONE --> NONE OF THE BELOW IS UP TO DATE WITH FZ-M1
 ## /etc/fstab
 As an external SDcard is used as main Data storage, the PC needs to automount it, though it should not fail if the card is not there (using the 'nofail' arg):
 ```
