@@ -12,8 +12,11 @@ This repository contains my personal scripts and modified config files for my Bu
 
 ### Display and scaling  
 ## DPI setting  
-Limiting eye strain with increased item size: set `Xft.dpi=144` in `~/.Xresources`
+Limiting eye strain with increased item size: set `Xft.dpi=120` in `~/.Xresources`
 
+## Gestures and scrolling
+- [Touchegg](https://github.com/joseexposito/touchegg)
+- enable one finger scrolling with `export MOZ_USE_XINPUT2=1` so it is possible to navigate instead of selecting.
 
 ### TO BE DONE --> NONE OF THE BELOW IS UP TO DATE WITH FZ-M1  
 ## 
