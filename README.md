@@ -18,6 +18,10 @@ Limiting eye strain with increased item size: set `Xft.dpi=120` in `~/.Xresource
 - [Touchegg](https://github.com/joseexposito/touchegg)
 - enable one finger scrolling with `export MOZ_USE_XINPUT2=1` so it is possible to navigate instead of selecting.
 
+## Use of Button A for triggering virtual KB
+- Modified tbtn driver to support the button ACPI id : MAT0035 ([still under construction](https://github.com/matmutant/tbtn-driver))
+- Added keybind ``` "xvkbd" XF86Launch1 ``` to .xbindkeysrc to launch virtual kb on button press
+
 ### TO BE DONE --> NONE OF THE BELOW IS UP TO DATE WITH FZ-M1  
 ## 
 ## External links
