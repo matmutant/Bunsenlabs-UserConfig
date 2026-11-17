@@ -22,7 +22,13 @@ Limiting eye strain with increased item size: set `Xft.dpi=120` in `~/.Xresource
 - Modified tbtn driver to support the button ACPI id : MAT0035 ([still under construction](https://github.com/matmutant/tbtn-driver))
 - Added keybind ``` "xvkbd" XF86Launch1 ``` to .xbindkeysrc to launch virtual kb on button press
 
+## Setting minimal brightness 
+- override the limit by adding a configuration  property :  
+```
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/brightness-slider-min-level -t int -s 15 --create
+```
 
+Still searching for a similar solution for Gnome Shell
 
 ### TO BE DONE --> NONE OF THE BELOW IS UP TO DATE WITH FZ-M1  
 ## 
